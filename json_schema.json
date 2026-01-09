@@ -1,0 +1,42 @@
+{
+    "title":"Review about a product",
+    "description":"It contains all extracted information about any product from review",
+    "type": "object",
+    "properties":{
+        "key_themes" : {
+            "type":"array",
+            "items" : {
+                "type":"string",
+                "description":"Write down the key themes discussed in the review in a list"
+            }
+        },
+        "summary" : {
+            "type":"string",
+            "description":"Give a brief summary"
+        },
+        "sentiment":{
+            "type":"string",
+            "enum":["pos","neg"],
+            "desrciption":"Give sentiment of the review with either positive,negative or neutral"
+        },
+        "pros":{
+            "type":["array","null"],
+            "items":{
+                "type" :"string",
+                "desrciption":"Write all the pros in the review in the form of a list"
+            }
+        },
+        "cons":{
+            "type":["array","null"],
+            "items":{
+                "type":"string",
+                "description":"Write all the cons in the review in the form of a list"
+            }
+        },
+        "name" : {
+            "type":"string",
+            "description":"Write the name of the reviewer"
+        }
+    },
+    "required":["sentiment","summary","key_themes"]
+}
